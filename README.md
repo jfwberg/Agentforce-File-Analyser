@@ -6,6 +6,6 @@ This is a demo app to show how prompt templates can be used to:
 - Extact data tables from images and plain tables
 - Convert the data table output to a set of LWC lightning-data tables
 
-# Blog
+## Blog
 See the following medium article for more details
-- 
+* Coming soon
