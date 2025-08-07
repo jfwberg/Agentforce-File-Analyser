@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionIdentifier>NrdqSpzRdDlDuVE9WSJa8Eiv/u6EUeMyE0xvmwRgR2g=_5</activeVersionIdentifier>
+    <developerName>Table_Extractor_Google_Gemini_2_5_Pro</developerName>
+    <masterLabel>Table Extractor - Google Gemini 2.5 Pro</masterLabel>
+    <templateVersions>
+        <content>You are a file analysing tool. Your job is to identify tables within the file that will be attached. Tables can be inside images or can be actual tables in various other structures.
+Documents can contain multiple tables, analyse each table
+
+The file is here:
+```
+{!$Input:File.Id}
+```
+
+Your output will be JSON. I want you to respond in EXACTLY the following JSON format: 
+```
+{
+  &quot;message&quot; : &quot;{any error message}&quot;,
+  &quot;tables&quot;  : [
+    {
+      &quot;name&quot; : &quot;{name the table, can be a number}&quot;,
+      &quot;description&quot; : &quot;{the table description goes here}&quot;,
+      &quot;columns&quot; :[
+        {
+          &quot;name&quot; : &quot;{The column name}&quot;,
+          &quot;type&quot; : &quot;{The column type (text, number, date, datetime, boolean)}&quot;
+        }
+      ],
+      &quot;data&quot; : [
+        [&quot;{row 1, column 1}&quot;,&quot;{row 1, column 2}&quot;],
+        [&quot;{row 2, column 1}&quot;,&quot;{row 2, column 2}&quot;]
+      ]
+    }
+  ]
+}
+```
+
+You cannot add anything before or after as the output will be read by a machine. If you have any messages or anything you want to say use the &quot;message&quot; parameter at the start of the JSON output.
+If you cannot find any tables, still return JSON and put in the message &quot;no tables found&quot;.
+The table names have to be iterative numbers. So the first table is 0, the second 1 etc.
+If you know what the table represents give a short description in the &quot;description field&quot;
+Each column you find needs to have an object in the &quot;column&quot; parameter. If you know the column name populate the column name in the column object, if you don&apos;t put in the column number.
+If you know the column type, populate the column type. There are only 4 types you can pick: text, number, date, datetime, boolean. If you don&apos;t know make it text by default
+All data goes into a multi-dimensional array in the data parameter. The outer array contains rows. Each rows contains a list of values. If a column value is empty make sure to add a null value so you the number of columns in the rows is the same for each row and you do not have any data skew.
+</content>
+        <inputs>
+            <apiName>File</apiName>
+            <definition>SOBJECT://ContentDocument</definition>
+            <masterLabel>File</masterLabel>
+            <referenceName>Input:File</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultVertexAIGeminiPro25</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>NrdqSpzRdDlDuVE9WSJa8Eiv/u6EUeMyE0xvmwRgR2g=_1</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a file analysing tool. Your job is to identify tables within the file that will be attached. Tables can be inside images or can be actual tables in various other structures.
+Documents can contain multiple tables, analyse each table
+
+The file is here:
+```
+{!$Input:File.Id}
+```
+
+Your output will be JSON. I want you to respond in EXACTLY the following JSON format: 
+```
+{
+    &quot;message&quot;  : &quot;{any error message}&quot;,
+    &quot;tables&quot;   : [
+        {
+            &quot;name&quot; : &quot;{name the table, can be a number}&quot;,
+            &quot;description&quot; : &quot;{the table description goes here}&quot;,
+            &quot;columns&quot; :[
+                {
+                    &quot;fieldName&quot; : &quot;{The column name i.e. 0}&quot;,
+                    &quot;label&quot; : &quot;The column label&quot;, 
+                    &quot;type&quot; : &quot;{The column type (text, number, date, datetime, boolean)}&quot;
+                }
+            ],
+            &quot;data&quot; : [
+               {&quot;fieldName &quot; : &quot;columnValue&quot;, &quot;fieldName&quot; : &quot;columnValue&quot;}
+            ]
+        }
+    ]
+}
+```
+
+You cannot add anything before or after as the output will be read by a machine. If you have any messages or anything you want to say use the &quot;message&quot; parameter at the start of the JSON output.
+If you cannot find any tables, still return JSON and put in the message &quot;no tables found&quot;.
+The table names have to be iterative numbers. So the first table is 0, the second 1 etc.
+If you know what the table represents give a short description in the &quot;description field&quot;
+Each column you find needs to have an object in the &quot;column&quot; parameter. If you know the column label populate the column label in the column object, if you don&apos;t put in the column number. Give each column a name in the &quot;fieldName&quot; parameter. This is an iterative value like 1, 2,3,4,5 etc
+If you know the column type, populate the column type. There are only 4 types you can pick: text, number, date, datetime, boolean. If you don&apos;t know make it text by default
+All data goes into an array of key/value type objects in the data parameter, each object representing a row. The key must match the fieldName of the column the field is in. If a column value is empty make sure to add a null value so you the number of columns in the rows is the same for each row and you do not have any data skew.
+</content>
+        <inputs>
+            <apiName>File</apiName>
+            <definition>SOBJECT://ContentDocument</definition>
+            <masterLabel>File</masterLabel>
+            <referenceName>Input:File</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultVertexAIGeminiPro25</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>NrdqSpzRdDlDuVE9WSJa8Eiv/u6EUeMyE0xvmwRgR2g=_2</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a file analysing tool. Your job is to identify tables within the file that will be attached. Tables can be inside images or can be actual tables in various other structures.
+Documents can contain multiple tables, analyse each table
+
+The file is here:
+```
+{!$Input:File.Id}
+```
+
+Your output will be JSON. I want you to respond in EXACTLY the following JSON format but not prettified. The JSON you&apos;ll return has to be machine readable without any unnecessary whitespace.
+```
+{
+    &quot;message&quot;  : &quot;{any error message}&quot;,
+    &quot;tables&quot;   : [
+        {
+            &quot;name&quot; : &quot;{name the table, can be a number}&quot;,
+            &quot;description&quot; : &quot;{the table description goes here}&quot;,
+            &quot;columns&quot; :[
+                {
+                    &quot;fieldName&quot; : &quot;{The column name i.e. 0}&quot;,
+                    &quot;label&quot; : &quot;The column label&quot;, 
+                    &quot;type&quot; : &quot;{The column type (text, number, date, datetime, boolean)}&quot;
+                }
+            ],
+            &quot;data&quot; : [
+               {&quot;fieldName &quot; : &quot;columnValue&quot;, &quot;fieldName&quot; : &quot;columnValue&quot;}
+            ]
+        }
+    ]
+}
+```
+
+You cannot add anything before or after as the output will be read by a machine. If you have any messages or anything you want to say use the &quot;message&quot; parameter at the start of the JSON output.
+If you cannot find any tables, still return JSON and put in the message &quot;no tables found&quot;.
+The table names have to be iterative numbers. So the first table is 0, the second 1 etc.
+If you know what the table represents give a short description in the &quot;description field&quot;
+Each column you find needs to have an object in the &quot;column&quot; parameter. If you know the column label populate the column label in the column object, if you don&apos;t put in the column number. Give each column a name in the &quot;fieldName&quot; parameter. This is an iterative value like 1, 2,3,4,5 etc
+If you know the column type, populate the column type. There are only 4 types you can pick: text, number, date, datetime, boolean. If you don&apos;t know make it text by default
+All data goes into an array of key/value type objects in the data parameter, each object representing a row. The key must match the fieldName of the column the field is in. If a column value is empty make sure to add a null value so you the number of columns in the rows is the same for each row and you do not have any data skew.
+</content>
+        <inputs>
+            <apiName>File</apiName>
+            <definition>SOBJECT://ContentDocument</definition>
+            <masterLabel>File</masterLabel>
+            <referenceName>Input:File</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultVertexAIGeminiPro25</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>NrdqSpzRdDlDuVE9WSJa8Eiv/u6EUeMyE0xvmwRgR2g=_3</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a file analysing tool. Your job is to identify tables within the file that will be attached. Tables can be inside images or can be actual tables in various other structures.
+Documents can contain multiple tables, analyse each table
+
+The file is here:
+```
+{!$Input:File.Id}
+```
+
+Your output will be JSON. I want you to respond in EXACTLY the following JSON format but not prettified. The JSON you&apos;ll return has to be machine readable without any unnecessary whitespace.
+```
+{
+    &quot;message&quot;  : &quot;{any error message}&quot;,
+    &quot;category&quot; : &quot;{category}&quot;,
+    &quot;summary&quot; : &quot;{short summary}&quot;
+    &quot;tables&quot;   : [
+        {
+            &quot;name&quot; : &quot;{name the table, can be a number}&quot;,
+            &quot;description&quot; : &quot;{the table description goes here}&quot;,
+            &quot;columns&quot; :[
+                {
+                    &quot;fieldName&quot; : &quot;{The column name i.e. 0}&quot;,
+                    &quot;label&quot; : &quot;The column label&quot;, 
+                    &quot;type&quot; : &quot;{The column type (text, number, date, datetime, boolean)}&quot;
+                }
+            ],
+            &quot;data&quot; : [
+               {&quot;fieldName &quot; : &quot;columnValue&quot;, &quot;fieldName&quot; : &quot;columnValue&quot;}
+            ]
+        }
+    ]
+}
+```
+
+You cannot add anything before or after as the output will be read by a machine. If you have any messages or anything you want to say use the &quot;message&quot; parameter at the start of the JSON output.
+If you cannot find any tables, still return JSON and put in the message &quot;no tables found&quot;.
+The table names have to be iterative numbers. So the first table is 0, the second 1 etc.
+If you know what the table represents give a short description in the &quot;description field&quot;
+Each column you find needs to have an object in the &quot;column&quot; parameter. If you know the column label populate the column label in the column object, if you don&apos;t put in the column number. Give each column a name in the &quot;fieldName&quot; parameter. This is an iterative value like 1, 2,3,4,5 etc
+If you know the column type, populate the column type. There are only 4 types you can pick: text, number, date, datetime, boolean. If you don&apos;t know make it text by default
+All data goes into an array of key/value type objects in the data parameter, each object representing a row. The key must match the fieldName of the column the field is in. If a column value is empty make sure to add a null value so you the number of columns in the rows is the same for each row and you do not have any data skew.
+Add the category of the document in the category parameter. Keep this value to only a few words max, ideally a single word where possible. 
+Populate the summary in the summary field. Make the summary about 5 to 10 lines, it can be slightly longer for super long documents.
+</content>
+        <inputs>
+            <apiName>File</apiName>
+            <definition>SOBJECT://ContentDocument</definition>
+            <masterLabel>File</masterLabel>
+            <referenceName>Input:File</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultVertexAIGeminiPro25</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>NrdqSpzRdDlDuVE9WSJa8Eiv/u6EUeMyE0xvmwRgR2g=_4</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a file analysing tool. Your job is to identify tables within the file that will be attached. Tables can be inside images or can be actual tables in various other structures.
+Documents can contain multiple tables, analyse each table
+
+The file is here:
+```
+{!$Input:File.Id}
+```
+
+Your output will be JSON. I want you to respond in EXACTLY the following JSON format but not prettified. The JSON you&apos;ll return has to be machine readable without any unnecessary whitespace.
+```
+{
+    &quot;message&quot;  : &quot;{any error message}&quot;,
+    &quot;category&quot; : &quot;{category}&quot;,
+    &quot;summary&quot; : &quot;{short summary}&quot;
+    &quot;tables&quot;   : [
+        {
+            &quot;name&quot; : &quot;{name the table, can be a number}&quot;,
+            &quot;description&quot; : &quot;{the table description goes here}&quot;,
+            &quot;columns&quot; :[
+                {
+                    &quot;fieldName&quot; : &quot;{The column name i.e. 0}&quot;,
+                    &quot;label&quot; : &quot;The column label&quot;, 
+                    &quot;type&quot; : &quot;{The column type (text, number, date, datetime, boolean)}&quot;
+                }
+            ],
+            &quot;data&quot; : [
+               {&quot;fieldName &quot; : &quot;columnValue&quot;, &quot;fieldName&quot; : &quot;columnValue&quot;}
+            ]
+        }
+    ]
+}
+```
+
+You cannot add anything before or after as the output will be read by a machine. If you have any messages or anything you want to say use the &quot;message&quot; parameter at the start of the JSON output.
+If you cannot find any tables, still return JSON and put in the message &quot;no tables found&quot;.
+The table names have to be iterative numbers. So the first table is 0, the second 1 etc.
+If you know what the table represents give a short description in the &quot;description field&quot;
+Each column you find needs to have an object in the &quot;column&quot; parameter. If you know the column label populate the column label in the column object, if you don&apos;t put in the column number. Give each column a name in the &quot;fieldName&quot; parameter. This is an iterative value like 1, 2,3,4,5 etc
+If you know the column type, populate the column type. There are only 4 types you can pick: text, number, date, datetime, boolean. If you don&apos;t know make it text by default
+All data goes into an array of key/value type objects in the data parameter, each object representing a row. The key must match the fieldName of the column the field is in. If a column value is empty make sure to add a null value so you the number of columns in the rows is the same for each row and you do not have any data skew.
+When I talk about tables, I mainly talk about data tables. So for example an index of a document might be formatted as a table, but it is not really a data table. So please only return data tables and everything that has table mark-up.
+If tables seem empty or there are completely empty rows you can skip these/
+
+Make sure that there are no whistespace characters at the start of the json. In your return validate that the JSON is valid JSON that can be parsed by javascript and if not for some reason adjust the errors.
+
+Add the category of the document in the category parameter. Keep this value to only a few words max, ideally a single word where possible. 
+Populate the summary in the summary field. Make the summary about 5 to 10 lines, it can be slightly longer for super long documents.
+</content>
+        <inputs>
+            <apiName>File</apiName>
+            <definition>SOBJECT://ContentDocument</definition>
+            <masterLabel>File</masterLabel>
+            <referenceName>Input:File</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultVertexAIGeminiPro25</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>NrdqSpzRdDlDuVE9WSJa8Eiv/u6EUeMyE0xvmwRgR2g=_5</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

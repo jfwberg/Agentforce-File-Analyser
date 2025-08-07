@@ -1,0 +1,16 @@
+{
+  "orgName": "Agentforce File Analyser",
+  "edition": "Developer",
+  "features": ["EnableSetPasswordInApi","Einstein1AIPlatform"],
+  "settings": {
+    "einsteinGptSettings": {
+      "enableEinsteinGptPlatform": true
+    },
+    "lightningExperienceSettings": {
+      "enableS1DesktopEnabled": true
+    },
+    "mobileSettings": {
+      "enableS1EncryptedStoragePref2": false
+    }
+  }
+}

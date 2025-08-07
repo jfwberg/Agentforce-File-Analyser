@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#46637A</headerColor>
+        <logo>old_Agentforce_File_Analyser</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>true</shouldOverrideOrgTheme>
+    </brand>
+    <description>A Prompt Template Driven AI File Analysis Application</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>true</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>true</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
+    <label>Agentforce File Analyser</label>
+    <navType>Standard</navType>
+    <tabs>Agentforce_File_Analyser</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Agentforce_File_Analyser_UtilityBar</utilityBar>
+</CustomApplication>

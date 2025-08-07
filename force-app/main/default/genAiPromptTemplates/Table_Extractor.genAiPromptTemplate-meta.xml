@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionIdentifier>NrdqSpzRdDlDuVE9WSJa8Eiv/u6EUeMyE0xvmwRgR2g=_3</activeVersionIdentifier>
+    <description>Extract tables into a JSON format that can be handled accordingly</description>
+    <developerName>Table_Extractor</developerName>
+    <masterLabel>Table Extractor</masterLabel>
+    <templateVersions>
+        <content>You are a file analysing tool. Your job is to identify tables within the file that will be attached. Tables can be inside images or can be actual tables in various other structures.
+Documents can contain multiple tables, analyse each table
+
+The file is here:
+```
+{!$Input:File.Id}
+```
+
+Your output will be JSON. I want you to respond in EXACTLY the following JSON format: 
+```
+{
+    &quot;message&quot;  : &quot;{any error message}&quot;,
+    &quot;tables&quot;   : [
+        {
+            &quot;name&quot; : &quot;{name the table, can be a number}&quot;,
+            &quot;description&quot; : &quot;{the table description goes here}&quot;,
+            &quot;columns&quot; :[
+                {
+                    &quot;name&quot; : &quot;{The column name}&quot;,
+                    &quot;type&quot; : &quot;{The column type (text, number, date, datetime, boolean)}&quot;
+                }
+            ],
+            &quot;data&quot; : [
+                [&quot;{row 1, column 1}&quot;,&quot;{row 1, column 2}&quot;],
+                [&quot;{row 2, column 1}&quot;,&quot;{row 2, column 2}&quot;]
+            ]
+        }
+    ]
+}
+```
+
+You cannot add anything before or after as the output will be read by a machine. If you have any messages or anything you want to say use the &quot;message&quot; parameter at the start of the JSON output.
+If you cannot find any tables, still return JSON and put in the message &quot;no tables found&quot;.
+The table names have to be iterative numbers. So the first table is 0, the second 1 etc.
+If you know what the table represents give a short description in the &quot;description field&quot;
+Each column you find needs to have an object in the &quot;column&quot; parameter. If you know the column name populate the column name in the column object, if you don&apos;t put in the column number.
+If you know the column type, populate the column type. There are only 4 types you can pick: text, number, date, datetime, boolean. If you don&apos;t know make it text by default
+All data goes into a multi-dimensional array in the data parameter. The outer array contains rows. Each rows contains a list of values. If a column value is empty make sure to add a null value so you the number of columns in the rows is the same for each row and you do not have any data skew.
+</content>
+        <inputs>
+            <apiName>File</apiName>
+            <definition>SOBJECT://ContentDocument</definition>
+            <masterLabel>File</masterLabel>
+            <referenceName>Input:File</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Draft</status>
+        <versionIdentifier>NrdqSpzRdDlDuVE9WSJa8Eiv/u6EUeMyE0xvmwRgR2g=_1</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a file analysing tool. Your job is to identify tables within the file that will be attached. Tables can be inside images or can be actual tables in various other structures.
+Documents can contain multiple tables, analyse each table
+
+The file is here:
+```
+{!$Input:File.Id}
+```
+
+Your output will be JSON. I want you to respond in EXACTLY the following JSON format: 
+```
+{
+    &quot;message&quot;  : &quot;{any error message}&quot;,
+    &quot;tables&quot;   : [
+        {
+            &quot;name&quot; : &quot;{name the table, can be a number}&quot;,
+            &quot;description&quot; : &quot;{the table description goes here}&quot;,
+            &quot;columns&quot; :[
+                {
+                    &quot;name&quot; : &quot;{The column name}&quot;,
+                    &quot;type&quot; : &quot;{The column type (text, number, date, datetime, boolean)}&quot;
+                }
+            ],
+            &quot;data&quot; : [
+                [&quot;{row 1, column 1}&quot;,&quot;{row 1, column 2}&quot;],
+                [&quot;{row 2, column 1}&quot;,&quot;{row 2, column 2}&quot;]
+            ]
+        }
+    ]
+}
+```
+
+You cannot add anything before or after as the output will be read by a machine. If you have any messages or anything you want to say use the &quot;message&quot; parameter at the start of the JSON output.
+If you cannot find any tables, still return JSON and put in the message &quot;no tables found&quot;.
+The table names have to be iterative numbers. So the first table is 0, the second 1 etc.
+If you know what the table represents give a short description in the &quot;description field&quot;
+Each column you find needs to have an object in the &quot;column&quot; parameter. If you know the column name populate the column name in the column object, if you don&apos;t put in the column number.
+If you know the column type, populate the column type. There are only 4 types you can pick: text, number, date, datetime, boolean. If you don&apos;t know make it text by default
+All data goes into a multi-dimensional array in the data parameter. The outer array contains rows. Each rows contains a list of values. If a column value is empty make sure to add a null value so you the number of columns in the rows is the same for each row and you do not have any data skew.
+</content>
+        <inputs>
+            <apiName>File</apiName>
+            <definition>SOBJECT://ContentDocument</definition>
+            <masterLabel>File</masterLabel>
+            <referenceName>Input:File</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>NrdqSpzRdDlDuVE9WSJa8Eiv/u6EUeMyE0xvmwRgR2g=_2</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a file analysis tool. Your job is to extract all **data tables** from the file attached at:
+
+```
+{!$Input:File.Id}
+```
+
+Data tables may be embedded in images or structured within the document. A document may contain multiple tables—analyze and extract each one.
+
+---
+
+### Output Requirements:
+
+You must return a **single valid, minified JSON object**. No extra text or whitespace is allowed before or after the JSON. Ensure the JSON can be parsed by JavaScript (fix any syntax errors before returning).
+
+If no tables are found, return:
+```json
+{&quot;message&quot;:&quot;no tables found&quot;,&quot;category&quot;:&quot;&quot;,&quot;summary&quot;:&quot;&quot;,&quot;tables&quot;:[]}
+```
+
+---
+
+### JSON Format:
+```json
+{
+ &quot;message&quot;:&quot;{error message or &apos;success&apos;}&quot;,
+ &quot;category&quot;:&quot;{short label, e.g. &apos;invoice&apos;, &apos;report&apos;}&quot;,
+ &quot;summary&quot;:&quot;{5–10 line summary of the document&apos;s content}&quot;,
+ &quot;tables&quot;:[
+  {
+   &quot;name&quot;:&quot;{table index as string: &apos;0&apos;, &apos;1&apos;, &apos;2&apos;, ...}&quot;,
+   &quot;description&quot;:&quot;{brief table description, if known}&quot;,
+   &quot;columns&quot;:[
+    {
+     &quot;fieldName&quot;:&quot;{column ID: 1,2,3,...}&quot;,
+     &quot;label&quot;:&quot;{column header or fallback label}&quot;,
+     &quot;type&quot;:&quot;{text|number|date|datetime|boolean (default to &apos;text&apos;)}&quot;
+    }
+   ],
+   &quot;data&quot;:[
+    {
+     &quot;fieldName&quot;:&quot;value&quot;, ...
+    }
+   ]
+  }
+ ]
+}
+```
+
+---
+
+### Rules &amp; Guidance:
+
+- Only extract **data tables** (i.e., structured tabular data). Ignore layout tables or indexes.
+- Name each table with an **iterative number** starting from `&quot;0&quot;`.
+- For each table:
+ - Generate a `columns` array where each column has:
+  - `fieldName`: numeric ID starting from 1
+  - `label`: column header (or fallback like &quot;Column 1&quot;)
+  - `type`: one of `text`, `number`, `date`, `datetime`, `boolean` (default: `text`)
+ - Generate a `data` array where:
+  - Each object is a row
+  - Keys match `fieldName`s
+  - Include all columns, use `null` for missing values (no data skew)
+- Skip completely empty tables or rows.
+- Use the `message` field for status or error information.
+- Classify the file in the `category` field (keep it short).
+- Include a 5–10 line `summary` describing the document contents.
+
+---
+
+**Important:** Return only a minified JSON object (no indentation or line breaks). Validate the output to ensure it&apos;s a valid JavaScript object.
+</content>
+        <inputs>
+            <apiName>File</apiName>
+            <definition>SOBJECT://ContentDocument</definition>
+            <masterLabel>File</masterLabel>
+            <referenceName>Input:File</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultVertexAIGeminiPro25</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>NrdqSpzRdDlDuVE9WSJa8Eiv/u6EUeMyE0xvmwRgR2g=_3</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

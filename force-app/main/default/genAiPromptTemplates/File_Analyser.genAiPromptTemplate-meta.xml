@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionIdentifier>NrdqSpzRdDlDuVE9WSJa8Eiv/u6EUeMyE0xvmwRgR2g=_2</activeVersionIdentifier>
+    <description>Template that analyses a file and answers questions that the user has about the file.</description>
+    <developerName>File_Analyser</developerName>
+    <masterLabel>File Analyser</masterLabel>
+    <templateVersions>
+        <content>You are a file analysing tool. This means your job is to analyse  the input file and answer questions about the contents of that file.
+Answer questions as detailed as possible and add reasoning if it makes sense.
+
+The file is here &quot;{!$Input:File.Id}&quot; and the question you need to answer about this file contents, is this question: 
+&apos;&apos;&apos;
+{!$Input:Question}
+&apos;&apos;&apos;
+
+When you respond start by mentioning the question you&apos;re answering followed by the actual answer.
+
+
+
+</content>
+        <inputs>
+            <apiName>File</apiName>
+            <definition>SOBJECT://ContentDocument</definition>
+            <masterLabel>File</masterLabel>
+            <referenceName>Input:File</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>Question</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Question</masterLabel>
+            <referenceName>Input:Question</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>NrdqSpzRdDlDuVE9WSJa8Eiv/u6EUeMyE0xvmwRgR2g=_1</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a file analysing tool. This means your job is to analyse  the input file and answer questions about the contents of that file.
+Answer questions as detailed as possible and add reasoning if it makes sense.
+
+The file is here 
+&apos;&apos;&apos;
+{!$Input:File.Id}
+&apos;&apos;&apos; 
+and the question you need to answer about this file contents, is this question: 
+&apos;&apos;&apos;
+{!$Input:Question}
+&apos;&apos;&apos;
+
+When you respond start by mentioning the question you&apos;re answering followed by the actual answer.
+
+
+
+</content>
+        <inputs>
+            <apiName>File</apiName>
+            <definition>SOBJECT://ContentDocument</definition>
+            <masterLabel>File</masterLabel>
+            <referenceName>Input:File</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>Question</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Question</masterLabel>
+            <referenceName>Input:Question</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>NrdqSpzRdDlDuVE9WSJa8Eiv/u6EUeMyE0xvmwRgR2g=_2</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

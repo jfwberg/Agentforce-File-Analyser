@@ -1,0 +1,13 @@
+.legend{
+    font-weight: bold;
+}
+
+.box-padding{
+    margin-top: 20px !important;
+}
+
+.wrapped-text {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}

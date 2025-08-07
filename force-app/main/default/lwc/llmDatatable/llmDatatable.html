@@ -1,0 +1,11 @@
+<template>
+    <div class="slds-box slds-scrollable_x" style="margin-top: 20px !important;">
+        <b>Name</b>: {name} <br/>
+        <b>Description</b>: {description}<br/>
+        <lightning-datatable
+            key-field="id" 
+            data={data} 
+            columns={columns}> 
+        </lightning-datatable>
+    </div>  
+</template>
