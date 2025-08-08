@@ -124,9 +124,10 @@
                         
                         <div lwc:if={response.extractTables}>
                             <template for:each={tables} for:item="datatable">
-                                <div class="slds-scrollable_x" style="max-width: 100%;" key={datatable.name}>
-                                    <c-llm-datatable tabledata={datatable}></c-llm-datatable>
-                                </div>
+                                <c-llm-datatable 
+                                    tabledata={datatable} 
+                                    key={datatable.name}
+                                ></c-llm-datatable>
                             </template>
                         </div>
                     </div>

@@ -8,4 +8,4 @@ This is a demo app to show how prompt templates can be used to:
 
 ## Blog
 See the following medium article for more details
-* Coming soon
+* [Coming soon](https://medium.com/@justusvandenberg/building-an-agentforce-document-analyser-with-table-extractor-1c5134f056ce)
