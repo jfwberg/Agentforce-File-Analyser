@@ -20,7 +20,7 @@ This is a demo app to show how prompt templates can be used to:
 ## Package Info
 |   |   |   |   |
 |---|---|---|---|
-|Package Name|**[Lightweight - Oxford Risk Auth Provider](https://github.com/jfwberg/agentforce-file-analyser)**||
+|Package Name|**[Agentforce File Analyser](https://github.com/jfwberg/agentforce-file-analyser)**||
 |Package Version|0.2.0-1||
 |Last updated date|Sep 18, 2025||
 |Unlocked Package | <ul><li> `sf package install --wait 30 --security-type AllUsers --package 04tKk000000kaahIAA`</li><li>`/packaging/installPackage.apexp?p0=04tKk000000kaahIAA`</li></ul> | [Install in Production](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tKk000000kaahIAA) | [Install in Sandbox](https://test.salesforce.com/packaging/installPackage.apexp?mgd=true&p0=04tKk000000kaahIAA)|
