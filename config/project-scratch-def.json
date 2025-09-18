@@ -1,7 +1,15 @@
 {
   "orgName": "Agentforce File Analyser",
-  "edition": "Developer",
-  "features": ["EnableSetPasswordInApi","Einstein1AIPlatform"],
+  "edition": "Enterprise",
+  "language": "en_US",
+  "country": "GB",
+  "features": [
+    "EnableSetPasswordInApi",
+    "Einstein1AIPlatform"
+  ],
+  "packageMetadataAccess": {
+    "permissionSets": ["EinsteinGPTPromptTemplateManager"]
+  },
   "settings": {
     "einsteinGptSettings": {
       "enableEinsteinGptPlatform": true

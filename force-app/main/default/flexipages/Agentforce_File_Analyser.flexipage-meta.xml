@@ -4,13 +4,13 @@
         <itemInstances>
             <componentInstance>
                 <componentName>agentforceFileAnalyser</componentName>
-                <identifier>agentforce1_agentforceFileAnalyser</identifier>
+                <identifier>aperture_agentforceFileAnalyser</identifier>
             </componentInstance>
         </itemInstances>
         <name>main</name>
         <type>Region</type>
     </flexiPageRegions>
-    <masterLabel>Agentforce File Analyser</masterLabel>
+    <masterLabel>File Questioner</masterLabel>
     <template>
         <name>flexipage:defaultAppHomeTemplate</name>
     </template>

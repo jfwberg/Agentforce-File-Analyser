@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
-    <activeVersionIdentifier>QKX3DpAaRUVedzRA5ikBMXK4eRPoMojFtdP3awyf5ys=_4</activeVersionIdentifier>
+    <activeVersionIdentifier>NrdqSpzRdDlDuVE9WSJa8Eiv/u6EUeMyE0xvmwRgR2g=_3</activeVersionIdentifier>
     <description>Extract tables into a JSON format that can be handled accordingly</description>
     <developerName>Table_Extractor</developerName>
     <masterLabel>Table Extractor</masterLabel>
@@ -189,85 +189,6 @@ If no tables are found, return:
         <primaryModel>sfdc_ai__DefaultVertexAIGeminiPro25</primaryModel>
         <status>Published</status>
         <versionIdentifier>NrdqSpzRdDlDuVE9WSJa8Eiv/u6EUeMyE0xvmwRgR2g=_3</versionIdentifier>
-    </templateVersions>
-    <templateVersions>
-        <content>You are a file analysis assistant specialized in detecting and extracting data tables from documents.
-
-Your task is to identify all data tables in the input file. These tables may be:
-
-- Actual structured tables (e.g. HTML, DOCX, PDF tables, etc.)
-- Tables inside images (perform OCR if needed)
-
-Do not include tables that are purely structural or visual, such as indexes, layouts, or formatting aids. Only return tables that represent real data.
-
-File to analyze:
-```
-{!$Input:File.Id}
-```
-
-Your output must follow these strict rules:
-
-- Return only valid machine-readable JSON
-- The output must be in exactly the following format — no extra whitespace, no pretty-printing, no explanation before or after the JSON
-- If you have an error or status message, populate the &quot;message&quot; field
-- If no tables are found, return the message: &quot;no tables found&quot; and leave &quot;tables&quot; as an empty array
-- You must validate your output to ensure it is valid JSON that can be parsed by JavaScript
-
-JSON Response Format (must be compact, not pretty-printed):
-```
-{
- &quot;message&quot;:&quot;{any error or status message, or empty string if none}&quot;,
- &quot;category&quot;:&quot;{single-word or short phrase document category}&quot;,
- &quot;summary&quot;:&quot;{summary of the document, 5–10 lines; longer if the document is very large}&quot;,
- &quot;tables&quot;:[
-  {
-   &quot;name&quot;:&quot;{table index as string: &apos;0&apos;, &apos;1&apos;, ...}&quot;,
-   &quot;description&quot;:&quot;{short description of what the table represents, if known}&quot;,
-   &quot;columns&quot;:[
-    {
-     &quot;fieldName&quot;:&quot;{column number as string: &apos;1&apos;, &apos;2&apos;, ...}&quot;,
-     &quot;label&quot;:&quot;{column label, or fallback to column number if label is unknown}&quot;,
-     &quot;type&quot;:&quot;{one of: text, number, date, datetime, boolean (default to &apos;text&apos; if unknown)}&quot;
-    }
-   ],
-   &quot;data&quot;:[
-    {
-     &quot;{fieldName}&quot;:{value or null},
-     &quot;{fieldName}&quot;:{value or null}
-    }
-   ]
-  }
- ]
-}
-```
-
-Additional Rules:
-
-- Table names (name) must be numbered incrementally starting from &quot;0&quot;, as strings.
-- Each fieldName in the columns array must be an incremental string: &quot;1&quot;, &quot;2&quot;, etc.
-- The label should match the visible header if available; otherwise use the column number.
-- If you don&apos;t know the column type, default to &quot;text&quot;.
-- The data array should contain one object per row. Each key must match a fieldName exactly.
-- Each data row must have the same number of columns as defined in columns. If a value is missing, set it to null.
-- Skip entirely empty tables or rows.
-- If no valid tables are found, return:
-```
-{&quot;message&quot;:&quot;no tables found&quot;,&quot;category&quot;:&quot;&quot;,&quot;summary&quot;:&quot;&quot;,&quot;tables&quot;:[]}
-```
-
-Ensure your final output is a single, compact, and valid JSON object without any leading or trailing whitespace or newline characters.
-
-</content>
-        <inputs>
-            <apiName>File</apiName>
-            <definition>SOBJECT://ContentDocument</definition>
-            <masterLabel>File</masterLabel>
-            <referenceName>Input:File</referenceName>
-            <required>true</required>
-        </inputs>
-        <primaryModel>sfdc_ai__DefaultVertexAIGeminiPro25</primaryModel>
-        <status>Published</status>
-        <versionIdentifier>QKX3DpAaRUVedzRA5ikBMXK4eRPoMojFtdP3awyf5ys=_4</versionIdentifier>
     </templateVersions>
     <type>einstein_gpt__flex</type>
     <visibility>Global</visibility>

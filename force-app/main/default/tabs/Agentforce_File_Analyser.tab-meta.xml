@@ -2,6 +2,6 @@
 <CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
     <description>Created by Lightning App Builder</description>
     <flexiPage>Agentforce_File_Analyser</flexiPage>
-    <label>Agentforce File Analyser</label>
-    <motif>Custom43: Jewel</motif>
+    <label>File Questioner</label>
+    <motif>Custom87: Safe</motif>
 </CustomTab>

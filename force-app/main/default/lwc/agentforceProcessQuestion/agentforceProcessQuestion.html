@@ -1,0 +1,72 @@
+<template>
+    <lightning-spinner
+        lwc:if          = {loading}
+        alternative-text= "Loading"
+        size            = "medium"
+        variant         = "base"
+    ></lightning-spinner>
+
+    <!-- MAIN CARD -->
+    <lightning-card title="Ask Process Related Questions" icon-name="standard:carousel">
+
+        <div slot="actions">
+            <lightning-button value="Ask" label="Ask" onclick={handleAsk}></lightning-button>
+        </div>
+
+        <div class="slds-card__body">
+            <div class="slds-var-p-around_small">
+                
+                
+                <fieldset class="slds-box">
+                    <legend class="legend">Input</legend>
+
+                    <lightning-combobox
+                        label    = "Model"
+                        value    = {modelSelected}
+                        options  = {modelOptions}
+                        onchange = {handleChangeModel}
+                        variant  = "label-inline"
+                    ></lightning-combobox>
+
+                    <lightning-textarea
+                        name            ="question"
+                        value           ={question}
+                        label           ="Question"
+                        onchange        ={handleChangeQuestion}
+                        field-level-help="Ask a question about the uploaded file"
+                        disabled        = {questionDisabled}
+                        variant         = "label-inline"
+                    ></lightning-textarea>
+                </fieldset>
+
+
+
+                <fieldset class="slds-box box-padding">
+                    <legend class="legend">LLM Response</legend>
+                    <div lwc:if={showResponse}>
+                        <div class="slds-scrollable_x" style="max-width: 100%;">
+                            <table class="slds-table slds-table_cell-buffer slds-table_bordered wrapped-text" style="table-layout: auto; max-width: 100%;">
+                                <tr>
+                                    <td>Model Name:</td>
+                                    <td>{response.modelName}</td>
+                                </tr>
+                                <tr>
+                                    <td>Prompt Template:</td>
+                                    <td>{response.promptTemplateName}</td>
+                                </tr>
+                                <tr>
+                                    <td>Question:</td>
+                                    <td class="wrapped-text">{response.question}</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div style="margin-top: 20px !important;"></div>
+                        <lightning-formatted-rich-text value={llmResponse} class="wrapped-text"></lightning-formatted-rich-text>
+
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </lightning-card>
+
+</template>

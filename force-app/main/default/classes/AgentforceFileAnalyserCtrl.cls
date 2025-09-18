@@ -32,10 +32,10 @@ public with sharing class AgentforceFileAnalyserCtrl {
             Map<String, ConnectApi.WrappedValue> inputParams = 
                 extractTables ?
                     new Map<String, ConnectApi.WrappedValue>{
-                        'Input:File'     => getWrappedValue(new Map<String,String>{'Id'=>contentDocumentId})
+                        'Input:File'	 => getWrappedValue(new Map<String,String>{'Id'=>contentDocumentId})
                     } :
                     new Map<String, ConnectApi.WrappedValue>{
-                        'Input:File'     => getWrappedValue(new Map<String,String>{'Id'=>contentDocumentId}),
+                        'Input:File'	 => getWrappedValue(new Map<String,String>{'Id'=>contentDocumentId}),
                         'Input:Question' => getWrappedValue(question)
                     }
             ;
@@ -44,7 +44,7 @@ public with sharing class AgentforceFileAnalyserCtrl {
             ConnectApi.EinsteinLlmAdditionalConfigInput additionalConfigInput = new ConnectApi.EinsteinLlmAdditionalConfigInput();
             additionalConfigInput.applicationName   = 'PromptTemplateGenerationsInvocable';
             additionalConfigInput.enablePiiMasking  = false;
-            additionalConfigInput.temperature       = 0.5;
+            additionalConfigInput.temperature 		= 0.5;
 
             // Setup all inputs for the prompts            
             ConnectApi.EinsteinPromptTemplateGenerationsInput executeTemplateInput = new ConnectApi.EinsteinPromptTemplateGenerationsInput();
@@ -54,13 +54,13 @@ public with sharing class AgentforceFileAnalyserCtrl {
             executeTemplateInput.inputParams        = inputParams;
 
             // Call LLM and generate response
-            ConnectApi.EinsteinPromptTemplateGenerationsRepresentation generationsOutput = ConnectApi.EinsteinLLM.generateMessagesForPromptTemplate(
+            ConnectApi.EinsteinPromptTemplateGenerationsRepresentation generationsOutput = (Test.isRunningTest()) ? null : ConnectApi.EinsteinLLM.generateMessagesForPromptTemplate(
                 promptTemplateName,
                 executeTemplateInput
             );
 
             // Extract the JSON response
-            String llmResponse = generationsOutput.generations[0]?.text?.removeStart('```json')?.removeEnd('```')?.trim();
+            String llmResponse = (Test.isRunningTest()) ? null : generationsOutput.generations[0]?.text?.removeStart('```json')?.removeEnd('```')?.trim();
 
             // Return the LLM response
             return new Map<String,Object>{
@@ -91,7 +91,13 @@ public with sharing class AgentforceFileAnalyserCtrl {
         }
     }
 
-    
+    /** **************************************************************************************************** **
+     **                                             LLM METHODS                                              **
+     ** **************************************************************************************************** **/
+
+
+
+
     /** **************************************************************************************************** **
      **                                      PRIVATE SUPPORT METHODS                                         **
      ** **************************************************************************************************** **/

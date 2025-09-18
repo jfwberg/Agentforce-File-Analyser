@@ -8,7 +8,7 @@
     ></lightning-spinner>
 
     <!-- MAIN CARD -->
-    <lightning-card title="Upload file to analyse" icon-name="standard:bot">
+    <lightning-card title="File Questioner :: Ask free format questions about a file" icon-name="standard:carousel">
         <div class="slds-card__body">
             <div class="slds-var-p-around_small">
                 <fieldset class="slds-box">
@@ -22,7 +22,7 @@
                         variant  = "label-inline"
                     ></lightning-combobox>
                     
-                    <lightning-input
+                    <lightning-textarea
                         name            ="question"
                         value           ={question}
                         label           ="Question"
@@ -30,18 +30,7 @@
                         field-level-help="Ask a question about the uploaded file"
                         disabled        = {questionDisabled}
                         variant         = "label-inline"
-                    ></lightning-input>
-
-                    <lightning-input
-                        type            = "checkbox"
-                        name            = "extractTables"
-                        value           = {extractTables}
-                        label           = "Extract Tables"
-                        onchange        = {handleChangeExtractTables}
-                        field-level-help= "Checking this option will extract the tables from a document"
-                        disabled        = {fileUploadDisabled}
-                        variant         = "label-inline"
-                    ></lightning-input>
+                    ></lightning-textarea>
 
                     <lightning-file-upload
                         label           = "Upload File"

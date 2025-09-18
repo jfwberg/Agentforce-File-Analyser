@@ -1,12 +1,28 @@
 {
   "packageDirectories": [
     {
+      "versionName": "v64.0 - 0.2",
+      "versionNumber": "0.2.0.NEXT",
       "path": "force-app",
-      "default": true
+      "default": true,
+      "package": "Agentforce File Analyser",
+      "versionDescription": "A POC on how Agentforce can leverage prompt template to query file content, extract tables, processes and more",
+      "definitionFile": "config/project-scratch-def.json",
+      "packageMetadataAccess": {
+        "permissionSets": [
+          "EinsteinGPTPromptTemplateManager"
+        ]
+      }
     }
   ],
   "name": "Agentforce File Analyser",
   "namespace": "agentforce1",
   "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "64.0"
+  "sourceApiVersion": "64.0",
+  "packageAliases": {
+    "Agentforce File Analyser": "0HoKk000000TN1KKAW",
+    "Agentforce File Analyser@0.1.0-1": "04tKk000000kaaIIAQ",
+    "Agentforce File Analyser@0.2.0-1": "04tKk000000kaaXIAQ",
+    "Agentforce File Analyser@0.2.0-2": "04tKk000000kaahIAA"
+  }
 }

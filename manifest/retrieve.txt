@@ -1,0 +1,3 @@
+sf project:retrieve start -m "FlexiPage"
+
+sf project retrieve start --manifest manifest/package.xml --target-org aperture

@@ -1,0 +1,129 @@
+<template>
+
+    <lightning-spinner
+        lwc:if          = {loading}
+        alternative-text= "Loading"
+        size            = "medium"
+        variant         = "base"
+    ></lightning-spinner>
+
+    <!-- MAIN CARD -->
+    <lightning-card title="Process Analyser :: Extract Process Information from a file" icon-name="standard:data_streams">
+        <div class="slds-card__body">
+            <div class="slds-var-p-around_small">
+                <fieldset class="slds-box">
+                    <legend class="legend">Input</legend>
+
+                    <lightning-combobox
+                        label    = "Model"
+                        value    = {modelSelected}
+                        options  = {modelOptions}
+                        onchange = {handleChangeModel}
+                        variant  = "label-inline"
+                    ></lightning-combobox>
+
+                    <lightning-textarea
+                        name            = "additionalInstructions"
+                        value           = {additionalInstructions}
+                        label           = "Additional Instructions"
+                        onchange        = {handleChangeAdditionalInstructions}
+                        field-level-help= "Additional Instructions (Optional)"
+                        disabled        = {fileUploadDisabled}
+                        variant         = "label-inline"
+                    ></lightning-textarea>
+
+                    <lightning-file-upload
+                        label           = "Upload File"
+                        name            = "fileUploader"
+                        accept          = {acceptedFormats}
+                        onuploadfinished= {handleUploadFinished}
+                        disabled        = {fileUploadDisabled}
+                        multiple        = false
+                    ></lightning-file-upload>
+
+                </fieldset>
+
+                <fieldset class="slds-box">
+                    <legend class="legend">Actions</legend>
+                    <lightning-button-group>
+                        <div lwc:if={showResponse}>
+                            <lightning-button variant="brand" label="Validate Process JSON" onclick={handleValidateProcess}></lightning-button>
+                        </div>
+
+                        <div lwc:if={showValidationResponse}>
+                            <lightning-button variant="brand" label="Apply Fixes" onclick={handleFixProcess}></lightning-button>
+                            <lightning-button variant="brand" label="Create Process Records" onclick={handleCreateProcessRecords}></lightning-button>
+                        </div>
+                    </lightning-button-group>
+                </fieldset>
+
+                <fieldset class="slds-box box-padding">
+                    <legend class="legend">Uploaded file info</legend>
+                    <div lwc:if={documentInfoVisible}>
+                        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                            <tr>
+                                <td>Document Id:</td>
+                                <td>{document.id}</td>
+                            </tr>
+                            <tr>
+                                <td>Document Name:</td>
+                                <td>{document.name}</td>
+                            </tr>
+                            <tr>
+                                <td>Document Status:</td>
+                                <td>{document.status}</td>
+                            </tr>
+                            <tr>
+                                <td>Document Content Body Id:</td>
+                                <td>{document.contentBodyId}</td>
+                            </tr>
+                            <tr>
+                                <td>Document Content Version Id:</td>
+                                <td>{document.contentVersionId}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </fieldset>
+
+                <fieldset class="slds-box box-padding">
+                    <legend class="legend">JSON Validation Response</legend>
+                    <div lwc:if={showValidationResponse}>
+                        <lightning-formatted-rich-text value={validationResponseText}></lightning-formatted-rich-text>
+                    </div>
+                </fieldset>
+
+                <fieldset class="slds-box box-padding">
+                    <legend class="legend">LLM Response</legend>
+                    <div lwc:if={showResponse}>
+                        <div class="slds-scrollable_x" style="max-width: 100%;">
+                            <table class="slds-table slds-table_cell-buffer slds-table_bordered wrapped-text" style="table-layout: auto; max-width: 100%;">
+                                <tr>
+                                    <td>Model Name:</td>
+                                    <td>{response.modelName}</td>
+                                </tr>
+                                <tr>
+                                    <td>Prompt Template:</td>
+                                    <td>{response.promptTemplateName}</td>
+                                </tr>
+                                <tr>
+                                    <td>Additional Instructions:</td>
+                                    <td>{response.additionalInstructions}</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <textarea 
+                            id="llmResponseTa" 
+                            class="ta slds-box" 
+                            onchange={handleChangeLlmResponse} 
+                            value={response.llmResponse}
+                        >{response.llmResponse}</textarea>
+
+                    </div>
+                </fieldset>
+
+            </div>
+        </div>
+    </lightning-card>
+
+</template>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Start_Step__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Start Step</label>
+    <referenceTo>Step__c</referenceTo>
+    <relationshipLabel>Processes</relationshipLabel>
+    <relationshipName>Processes</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>
