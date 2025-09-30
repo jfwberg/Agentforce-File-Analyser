@@ -4,7 +4,7 @@
         <itemInstances>
             <componentInstance>
                 <componentName>agentforceTableExtractor</componentName>
-                <identifier>aperture_agentforceTableExtractor</identifier>
+                <identifier>agentforceTableExtractor</identifier>
             </componentInstance>
         </itemInstances>
         <name>main</name>

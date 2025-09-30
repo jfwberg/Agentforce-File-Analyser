@@ -39,7 +39,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Id__c</fieldItem>
-                <identifier>Recordaperture_Id_cField</identifier>
+                <identifier>RecordId_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -49,7 +49,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Type__c</fieldItem>
-                <identifier>Recordaperture_Type_cField</identifier>
+                <identifier>RecordType_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -59,7 +59,7 @@
                     <value>required</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Action__c</fieldItem>
-                <identifier>Recordaperture_Action_cField</identifier>
+                <identifier>RecordAction_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -69,7 +69,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Next_Step__c</fieldItem>
-                <identifier>Recordaperture_Next_Step_cField</identifier>
+                <identifier>RecordNext_Step_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-12805e79-1edf-4ae2-a2a0-7e3f3a0799a1</name>
@@ -93,7 +93,7 @@
                     <value>required</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Process__c</fieldItem>
-                <identifier>Recordaperture_Process_cField</identifier>
+                <identifier>RecordProcess_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -103,7 +103,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Process_Id__c</fieldItem>
-                <identifier>Recordaperture_Process_Id_cField</identifier>
+                <identifier>RecordProcess_Id_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -113,7 +113,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Next_Step_Id__c</fieldItem>
-                <identifier>Recordaperture_Next_Step_Id_cField</identifier>
+                <identifier>RecordNext_Step_Id_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-6d83e6b4-a56c-42b6-902a-052e5ed4f7e7</name>

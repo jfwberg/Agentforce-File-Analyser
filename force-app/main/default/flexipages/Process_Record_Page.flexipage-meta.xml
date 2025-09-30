@@ -49,7 +49,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Version__c</fieldItem>
-                <identifier>Recordaperture_Version_cField</identifier>
+                <identifier>RecordVersion_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -59,7 +59,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Description__c</fieldItem>
-                <identifier>Recordaperture_Description_cField</identifier>
+                <identifier>RecordDescription_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -69,7 +69,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Start_Step__c</fieldItem>
-                <identifier>Recordaperture_Start_Step_cField</identifier>
+                <identifier>RecordStart_Step_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-07533cc2-ce4f-4aad-8cc3-12bb3232eb47</name>
@@ -83,7 +83,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.AI_Model__c</fieldItem>
-                <identifier>Recordaperture__AI_Model__cField</identifier>
+                <identifier>RecordAI_Model__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -93,7 +93,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Summary__c</fieldItem>
-                <identifier>Recordaperture__Summary__cField</identifier>
+                <identifier>RecordSummary__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-ed9a062a-1ef9-46c9-bf95-350cc660d1e3</name>
@@ -131,7 +131,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Notes__c</fieldItem>
-                <identifier>Recordaperture_Notes_cField</identifier>
+                <identifier>RecordNotes_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-25fc081c-b7b0-451a-97ae-38d9937f1a31</name>
@@ -145,7 +145,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Validation_Result__c</fieldItem>
-                <identifier>Recordaperture_Validation_Result_cField</identifier>
+                <identifier>RecordValidation_Result_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-13e0effe-0800-4713-9573-819e5466cbbc</name>
@@ -183,7 +183,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Id__c</fieldItem>
-                <identifier>Recordaperture_Id_cField</identifier>
+                <identifier>RecordId_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -193,7 +193,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Start_Step_Id__c</fieldItem>
-                <identifier>Recordaperture_Start_Step_Id_cField</identifier>
+                <identifier>RecordStart_Step_Id_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-61c06aa0-b734-4155-98ac-29640494088c</name>
@@ -350,7 +350,7 @@
         <itemInstances>
             <componentInstance>
                 <componentName>agentforceProcessQuestion</componentName>
-                <identifier>aperture_agentforceProcessQuestion</identifier>
+                <identifier>agentforceProcessQuestion</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>

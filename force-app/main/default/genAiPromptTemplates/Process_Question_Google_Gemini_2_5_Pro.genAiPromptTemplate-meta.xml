@@ -11,10 +11,10 @@ The process is described in 
 {!$Input:Process.Id}
 
 Each step is in the process is a record of the type step found in the related list:
-{!$RelatedList:Process.aperture__Steps__r.Records}
+{!$RelatedList:Process.Steps__r.Records}
 
 All the outcomes related to the steps are in the outcomes related list
-{!$RelatedList:Process.aperture__Outcomes__r.Records}
+{!$RelatedList:Process.Outcomes__r.Records}
 
 The question to answer in the context of the process with a reasonable amount of detail. There is no need to cite the entire process. Just focus on the question and only add more details when it is relevant.
 {!$Input:Question}
@@ -60,9 +60,9 @@ The whole process is also stored in a JSON structure. This is optional to be pro
                 <definition>primitive://String</definition>
                 <isRequired>true</isRequired>
                 <parameterName>relatedListName</parameterName>
-                <valueExpression>aperture__Steps__r</valueExpression>
+                <valueExpression>Steps__r</valueExpression>
             </parameters>
-            <referenceName>RelatedList:Process.aperture__Steps__r.Records</referenceName>
+            <referenceName>RelatedList:Process.Steps__r.Records</referenceName>
         </templateDataProviders>
         <templateDataProviders>
             <definition>invocable://getRelatedList</definition>
@@ -76,9 +76,9 @@ The whole process is also stored in a JSON structure. This is optional to be pro
                 <definition>primitive://String</definition>
                 <isRequired>true</isRequired>
                 <parameterName>relatedListName</parameterName>
-                <valueExpression>aperture__Outcomes__r</valueExpression>
+                <valueExpression>Outcomes__r</valueExpression>
             </parameters>
-            <referenceName>RelatedList:Process.aperture__Outcomes__r.Records</referenceName>
+            <referenceName>RelatedList:Process.Outcomes__r.Records</referenceName>
         </templateDataProviders>
         <versionIdentifier>NrdqSpzRdDlDuVE9WSJa8Eiv/u6EUeMyE0xvmwRgR2g=_1</versionIdentifier>
     </templateVersions>
@@ -90,10 +90,10 @@ The process is described in 
 {!$Input:Process.Id}
 
 Each step is in the process is a record of the type step found in the related list:
-{!$RelatedList:Process.aperture__Steps__r.Records}
+{!$RelatedList:Process.Steps__r.Records}
 
 All the outcomes related to the steps are in the outcomes related list
-{!$RelatedList:Process.aperture__Outcomes__r.Records}
+{!$RelatedList:Process.Outcomes__r.Records}
 
 The question to answer in the context of the process with a reasonable amount of detail. There is no need to cite the entire process. Just focus on the question and only add more details when it is relevant.
 {!$Input:Question}
@@ -139,9 +139,9 @@ The whole process is also stored in a JSON structure. This is optional to be pro
                 <definition>primitive://String</definition>
                 <isRequired>true</isRequired>
                 <parameterName>relatedListName</parameterName>
-                <valueExpression>aperture__Steps__r</valueExpression>
+                <valueExpression>Steps__r</valueExpression>
             </parameters>
-            <referenceName>RelatedList:Process.aperture__Steps__r.Records</referenceName>
+            <referenceName>RelatedList:Process.Steps__r.Records</referenceName>
         </templateDataProviders>
         <templateDataProviders>
             <definition>invocable://getRelatedList</definition>
@@ -155,9 +155,9 @@ The whole process is also stored in a JSON structure. This is optional to be pro
                 <definition>primitive://String</definition>
                 <isRequired>true</isRequired>
                 <parameterName>relatedListName</parameterName>
-                <valueExpression>aperture__Outcomes__r</valueExpression>
+                <valueExpression>Outcomes__r</valueExpression>
             </parameters>
-            <referenceName>RelatedList:Process.aperture__Outcomes__r.Records</referenceName>
+            <referenceName>RelatedList:Process.Outcomes__r.Records</referenceName>
         </templateDataProviders>
         <versionIdentifier>NrdqSpzRdDlDuVE9WSJa8Eiv/u6EUeMyE0xvmwRgR2g=_2</versionIdentifier>
     </templateVersions>

@@ -1,8 +1,8 @@
 {
   "packageDirectories": [
     {
-      "versionName": "v64.0 - 0.2",
-      "versionNumber": "0.2.0.NEXT",
+      "versionName": "v64.0 - 0.3",
+      "versionNumber": "0.3.0.NEXT",
       "path": "force-app",
       "default": true,
       "package": "Agentforce File Analyser",
@@ -23,6 +23,7 @@
     "Agentforce File Analyser": "0HoKk000000TN1KKAW",
     "Agentforce File Analyser@0.1.0-1": "04tKk000000kaaIIAQ",
     "Agentforce File Analyser@0.2.0-1": "04tKk000000kaaXIAQ",
-    "Agentforce File Analyser@0.2.0-2": "04tKk000000kaahIAA"
+    "Agentforce File Analyser@0.2.0-2": "04tKk000000kaahIAA",
+    "Agentforce File Analyser@0.3.0-1": "04tKk000000karcIAA"
   }
 }

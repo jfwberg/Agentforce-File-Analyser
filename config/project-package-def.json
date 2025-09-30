@@ -7,6 +7,9 @@
     "EnableSetPasswordInApi",
     "Einstein1AIPlatform"
   ],
+  "packageMetadataAccess": {
+    "permissionSets": ["EinsteinGPTPromptTemplateManager"]
+  },
   "settings": {
     "einsteinGptSettings": {
       "enableEinsteinGptPlatform": true
