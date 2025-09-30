@@ -13,8 +13,8 @@ This is a demo app to show how prompt templates can be used to:
 **!! This is for Demo / POC / Inspirational Purposes Only, Use at your own risk !!**
 
 ## Blog
-* (Building an Agentforce Document Analyser With Table Extractor)[https://medium.com/@justusvandenberg/building-an-agentforce-document-analyser-with-table-extractor-1c5134f056ce]
-* (Extract, Analyse And Use Process Flows In Salesforce Using Agentforce)[https://medium.com/@justusvandenberg/extract-analyse-and-use-process-flows-in-salesforce-using-agentforce-2e3ea77d053a]
+* [Building an Agentforce Document Analyser With Table Extractor](https://medium.com/@justusvandenberg/building-an-agentforce-document-analyser-with-table-extractor-1c5134f056ce)
+* [Extract, Analyse And Use Process Flows In Salesforce Using Agentforce](https://medium.com/@justusvandenberg/extract-analyse-and-use-process-flows-in-salesforce-using-agentforce-2e3ea77d053a)
 
 ## Package Info
 |   |   |   |   |
